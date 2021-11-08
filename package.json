@@ -1,0 +1,22 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css:build": "tailwind build ./src/style.css -o ./build/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shivamkakda/evolutionunit3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shivamkakda/evolutionunit3/issues"
+  },
+  "homepage": "https://github.com/Shivamkakda/evolutionunit3#readme",
+  "dependencies": {
+    "tailwindcss": "^2.2.19"
+  }
+}
