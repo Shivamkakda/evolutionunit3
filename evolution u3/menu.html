@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food App</title>
+    <link rel="stylesheet" href="./style/index.css">
+</head>
+<body>
+<div id="foods"></div>
+</body>
+</html>
+
+<script type="module">
+     import {htmlDetails, navbar} from "./components/navbar.js"
+    import {onPageLoad, searchKeyword, clickButton} from './scripts/showData.js';
+    document.body.innerHTML = htmlDetails();
+    let parrent = document.getElementById('menubar');
+
+    let pr = new Promise((resolve, reject) => {
+        let nav = document.getElementById('navCont');
+            nav.innerHTML = navbar();
+          
+    })
+    pr.then( (res) => {
+    })
+    .catch( (error) => {
+        console.log(error);
+    })
+  
+    async function fetchdata(){
+        let response = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
+        let data = await response.json()
+
+        ShowData(data.categories);
+    }
+    fetchdata();
+    var foods = document.getElementById("foods")
+    function ShowData(data){
+        data.forEacch((food) =>{
+            let div = document.createElement('div');
+        div.setAttribute('class', 'detailsBox');
+            let img = document.createElement('img');
+        img.src = food.strCategoryThumb;
+
+        let titleName = document.createElement('h2');
+        titleName.textContent = food.strCategory;
+
+        let btn = document.createElement('p');
+        btn.innerHTML = "CART"
+
+
+        div.append(img, titleName, btn);
+
+        foods.append(div);
+        })
+    }
+
+</script>
