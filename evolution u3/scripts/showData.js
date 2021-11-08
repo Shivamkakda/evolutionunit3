@@ -49,8 +49,14 @@ function appendData(data, parrent, flag){
 
         let price = document.createElement('p');
         price.innerHTML = "<span>Price: </span>" + pricePerServing + " INR";
+        let btn = document.createElement("button")
+        btn.setAttribute("id", "btn")
+        btn.innerHTML ="Cart"
+        btn.addEventListener("click",() =>{
+            window.location.href ="cart.html"
+        })
 
-        div.append(img, titleName, typeDish, price);
+        div.append(img, titleName, typeDish, price,btn);
 
         parrent.append(div);
     

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/style/index.css"/>
 </head>
 <body>
-    <div id="navbars"></div>
+    
     <div id="signup">
         <h2> Signin Food Panda</h2>
         <form onsubmit="signup(event)" id="signup-form">
@@ -56,17 +56,4 @@
         })
     }
 </script>
-<script type="module">
-    import {htmlDetails, navbar} from "./components/navbar.js"
-   let pr = new Promise((resolve, reject) => {
-       let nav = document.getElementById('navCont');
-           nav.innerHTML = navbar();
-         
-   })
-   pr.then( (res) => {
-   })
-   .catch( (error) => {
-       console.log(error);
-   })
 
-</script>

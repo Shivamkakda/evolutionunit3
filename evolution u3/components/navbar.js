@@ -6,13 +6,13 @@ function navbar(){
     </div>
         <span>
             <input type="text" id="keyword" placeholder="Enter keyword to search" >
-            <button id="searchButton">Search</button>
-            <hr>
+            <button class="searchButton">Search</button>
         </span>
         <div id ="right">
         <a href="./signin.html">Signin</a>
         <a href="./login.html">Login</a>
         <a href ="./menu.html">Menu</a>
+        <a href ="./cart.html">Cart</a>
         </div>
         </div>`
 }
@@ -20,6 +20,7 @@ function navbar(){
 function htmlDetails(){
     return `<div id="navCont">
     </div>
+    <div id="navbars"></div>
     <div id="search">
     </div>
    
